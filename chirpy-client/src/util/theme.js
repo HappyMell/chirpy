@@ -30,7 +30,8 @@ export default {
         },
         button: {
             marginTop: 20,
-            position: 'relative'
+            position: 'relative',
+            float: 'right'
         },
         customError: {
             color: 'red',
@@ -38,10 +39,106 @@ export default {
             marginTop: 10
         },
         progress: {
-            position: 'absoloute'
+            position: 'absolute'
         },
         typography: {
             useNextVariants: true
+        },
+        submitButton: {
+            position: 'relative',
+            float: 'right',
+            marginTop: 10
+        },
+        progressSpinner: {
+            position: 'absolute'
+        },
+        closeButton: {
+            position: 'absolute',
+            left: '91%',
+            top: '6%',
+        },
+        paper: {
+            padding: 20
+        },
+        profile: {
+            '& .image-wrapper': {
+                textAlign: 'center',
+                position: 'relative',
+                '& button': {
+                    position: 'absolute',
+                    top: '80%',
+                    left: '70%'
+                }
+            },
+            '& .profile-image': {
+                width: 200,
+                height: 200,
+                objectFit: 'cover',
+                maxWidth: '100%',
+                borderRadius: '50%'
+            },
+            '& .profile-details': {
+                textAlign: 'center',
+                '& span, svg': {
+                    verticalAlign: 'middle'
+                },
+
+            },
+            '& hr': {
+                border: 'none',
+                margin: '0 0 10px 0'
+            },
+            '& svg.button': {
+                '&:hover': {
+                    cursor: 'pointer'
+                }
+            }
+        },
+        buttons: {
+            textAlign: 'center',
+            '& a': {
+                margin: '20px 10px'
+            }
+        },
+        invisibleSeparator: {
+            border: 'none',
+            margin: 4
+        },
+        profileImage: {
+            maxWidth: 200,
+            height: 200,
+            borderRadius: '50%',
+            objectFit: 'cover'
+        },
+        dialogContent: {
+            padding: 20
+        },
+
+        expandButton: {
+            position: 'absolute',
+            left: '90%'
+        },
+        spinnerDiv: {
+            textAlign: 'center',
+            marginTop: 50,
+            marginBottom: 50
+        },
+        visibleSeparator: {
+            width: '100%',
+            borderBottom: '1px solid rgba(0, 0, 0, 0.1)',
+            marginBottom: 20
+        },
+        commentImage: {
+            maxWidth: '100%',
+            height: 100,
+            objectFit: 'cover',
+            borderRadius: '50%'
+        },
+        commentData: {
+            marginLeft: 20
         }
-    }
+    },
+
+
+
 }
