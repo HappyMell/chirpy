@@ -69,7 +69,7 @@ class Chirp extends Component {
                         <ChatIcon color="primary" />
                     </MyButton>
                     <span>{commentCount} Comments</span>
-                    <ChirpDialog chirpId={chirpId} userHandle={userHandle} />
+                    <ChirpDialog chirpId={chirpId} userHandle={userHandle} openDialog={this.props.openDialog} />
                 </CardContent>
             </Card>
         )
@@ -79,7 +79,8 @@ class Chirp extends Component {
 Chirp.propTypes = {
     user: PropTypes.object.isRequired,
     chirp: PropTypes.object.isRequired,
-    classes: PropTypes.object.isRequired
+    classes: PropTypes.object.isRequired,
+    openDialog: PropTypes.bool
 }
 
 const mapStateToProps = state => ({

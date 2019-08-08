@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Chirp from '../components/Chirp/Chirp';
 import Profile from '../components/Profile/Profile';
+import ChirpSkeleton from '../util/ChirpSkeleton';
 import PropTypes from 'prop-types';
 
 // Redux
@@ -19,7 +20,8 @@ class Home extends Component {
 
         let recentChirpsMarkup = !loading ? (
             chirps.map(chirp => <Chirp key={chirp.chirpId} chirp={chirp} />)
-        ) : (<p>Loading...</p>
+        ) : (
+                <ChirpSkeleton />
             )
         return (
             <Grid container spacing={2}>

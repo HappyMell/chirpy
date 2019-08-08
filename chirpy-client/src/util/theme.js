@@ -1,3 +1,5 @@
+
+
 export default {
     palette: {
         primary: {
@@ -31,7 +33,6 @@ export default {
         button: {
             marginTop: 20,
             position: 'relative',
-            float: 'right'
         },
         customError: {
             color: 'red',
@@ -92,7 +93,11 @@ export default {
                 '&:hover': {
                     cursor: 'pointer'
                 }
+            },
+            '& a': {
+                color: '#00bcd4'
             }
+
         },
         buttons: {
             textAlign: 'center',
@@ -136,9 +141,8 @@ export default {
         },
         commentData: {
             marginLeft: 20
-        }
-    },
+        },
 
-
+    }
 
 }

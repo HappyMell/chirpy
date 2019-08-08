@@ -1,4 +1,4 @@
-import { SET_USER, SET_AUTHENTICATED, SET_UNAUTHENTICATED, LOADING_USER, LIKE_CHIRP, UNLIKE_CHIRP } from '../types';
+import { SET_USER, SET_AUTHENTICATED, SET_UNAUTHENTICATED, LOADING_USER, LIKE_CHIRP, UNLIKE_CHIRP, MARK_NOTIFICATIONS_READ } from '../types';
 
 const initialState = {
     authenticated: false,
@@ -44,6 +44,12 @@ export default function (state = initialState, action) {
                 ...state,
                 likes: state.likes.filter(like => like.chirpId !== action.payload.chirpId)
             }
+        case MARK_NOTIFICATIONS_READ:
+            state.notifications.forEach(not => not.read = true);
+            return {
+                ...state
+            }
+
         default:
             return state;
     }

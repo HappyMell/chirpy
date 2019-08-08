@@ -131,7 +131,6 @@ export const getUserData = (userHandle) => (dispatch) => {
         });
 };
 
-
 //Clear Errors
 export const clearErrors = () => (dispatch) => {
     dispatch({ type: CLEAR_ERRORS })

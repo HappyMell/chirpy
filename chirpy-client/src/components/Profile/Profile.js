@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import dayjs from 'dayjs';
 import EditDetails from './EditDetails';
 import MyButton from '../../util/MyButton';
+import ProfileSkeleton from '../../util/ProfileSkeleton';
 
 //MUI
 import Button from '@material-ui/core/Button';
@@ -26,10 +27,7 @@ import { logoutUser, uploadImage } from '../../redux/actions/userActions';
 
 
 const styles = (theme) => ({
-    ...theme.otherPages,
-    '& a': {
-        color: theme.palette.primary.main
-    }
+    ...theme.otherPages
 
 })
 
@@ -115,7 +113,7 @@ class Profile extends Component {
                     </Button>
                     </div>
                 </Paper>
-            )) : (<p>loading...</p>)
+            )) : (<ProfileSkeleton />)
 
         return profileMarkup
     }

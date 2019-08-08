@@ -12,7 +12,6 @@ import CommentForm from './CommentForm';
 //MUI
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -36,20 +35,37 @@ const styles = theme => ({
 
 class ChirpDialog extends Component {
     state = {
-        open: false
+        open: false,
+        oldPath: '',
+        newPath: ''
+    }
+
+    componentDidMount() {
+        if (this.props.openDialog) {
+            this.handleOpen();
+        }
     }
 
     handleOpen = () => {
-        this.setState({
-            open: true
-        });
+        let oldPath = window.location.pathname;
+
+        const { userHandle, chirpId } = this.props;
+        const newPath = `/users/${userHandle}/chirp/${chirpId}`;
+
+        if (oldPath === newPath) {
+            oldPath = `/users/${userHandle}`;
+        }
+
+        window.history.pushState(null, null, newPath);
+
+        this.setState({ open: true, newPath, oldPath });
         this.props.getChirp(this.props.chirpId)
     }
 
     handleClose = () => {
-        this.setState({
-            open: false
-        })
+        window.history.pushState(null, null, this.state.oldPath);
+
+        this.setState({ open: false })
         this.props.clearErrors()
     }
 
