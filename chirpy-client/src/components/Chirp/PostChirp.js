@@ -16,13 +16,18 @@ import AddIcon from '@material-ui/icons/Add';
 import CloseIcon from '@material-ui/icons/Close';
 
 
+
+
 //Redux
 import { connect } from 'react-redux';
 import { postChirp, clearErrors } from '../../redux/actions/dataActions';
 
-const styles = theme => ({
-    ...theme.otherPages
+const styles = (theme) => ({
+    ...theme.otherPages,
 })
+
+
+
 
 class PostChirp extends Component {
     state = {
@@ -30,6 +35,8 @@ class PostChirp extends Component {
         body: '',
         errors: {}
     };
+
+
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.UI.errors) {
@@ -74,6 +81,8 @@ class PostChirp extends Component {
     render() {
         const { errors } = this.state;
         const { classes, UI: { loading } } = this.props;
+
+
         return (
             <Fragment>
                 <MyButton onClick={this.handleOpen} tip="Post a Chirp!">
@@ -83,7 +92,7 @@ class PostChirp extends Component {
                     open={this.state.open}
                     onClose={this.handleClose}
                     fullWidth
-                    maxWidth="sm">
+                    maxWidth="xs">
                     <MyButton tip="Close" onClick={this.handleClose} tipClassName={classes.closeButton}>
                         <CloseIcon />
                     </MyButton>
@@ -95,7 +104,7 @@ class PostChirp extends Component {
                                 type="text"
                                 label="Chirp!"
                                 multiline
-                                rows="3"
+                                rows="1"
                                 placeholder="Send a Chirp!"
                                 error={errors.body ? true : false}
                                 helperText={errors.body}

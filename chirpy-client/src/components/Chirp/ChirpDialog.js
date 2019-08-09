@@ -18,7 +18,6 @@ import Typography from '@material-ui/core/Typography';
 
 //Icons
 import CloseIcon from '@material-ui/icons/Close';
-import UnfoldMore from '@material-ui/icons/UnfoldMore';
 import ChatIcon from '@material-ui/icons/Chat';
 
 
@@ -58,7 +57,7 @@ class ChirpDialog extends Component {
 
         window.history.pushState(null, null, newPath);
 
-        this.setState({ open: true, newPath, oldPath });
+        this.setState({ open: true, oldPath, newPath });
         this.props.getChirp(this.props.chirpId)
     }
 
@@ -78,9 +77,9 @@ class ChirpDialog extends Component {
                 <CircularProgress size={200} thickness={2} />
             </div>
         ) : (
-                <Grid container spacing={2} >
-                    <Grid item sm={5}>
-                        <img src={userImage} alt="Profile" className={classes.profileImage} />
+                <Grid container spacing={2}  >
+                    <Grid item sm={5} xs={3} >
+                        <img src={userImage} alt="Profile" xs={5} className={classes.profileImage} />
                     </Grid>
                     <Grid item sm={7}>
                         <Typography component={Link} color="primary" variant="h5" to={`/users/${userHandle}`} >
@@ -109,8 +108,8 @@ class ChirpDialog extends Component {
             )
         return (
             <Fragment>
-                <MyButton onClick={this.handleOpen} tip="Expand Chirp" tipClassName={classes.expandButton}>
-                    <UnfoldMore color="primary" />
+                <MyButton onClick={this.handleOpen} tip="Comments" tipClassName={classes.expandButton}>
+                    <ChatIcon color="primary" />
                 </MyButton>
                 <Dialog open={this.state.open} onClose={this.handleClose} fullWidth maxWidth="sm">
                     <MyButton tip="Close" onClick={this.handleClose} tipClassName={classes.closeButton}>

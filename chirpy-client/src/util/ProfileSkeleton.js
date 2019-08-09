@@ -1,11 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import NoImg from '../images/no-img.png';
 import PropTypes from 'prop-types';
 
 //MUI
-import Card from '@material-ui/core/Card';
-import CardMedia from '@material-ui/core/CardMedia';
-import CardContent from '@material-ui/core/CardContent'
+
 import withStyles from '@material-ui/core/styles/withStyles';
 import Paper from '@material-ui/core/Paper';
 
@@ -13,7 +11,6 @@ import Paper from '@material-ui/core/Paper';
 import LocationOn from '@material-ui/icons/LocationOn';
 import LinkIcon from '@material-ui/icons/Link';
 import CalendarToday from '@material-ui/icons/CalendarToday';
-import Profile from '../components/Profile/Profile';
 
 const styles = theme => ({
     ...theme.otherPages,

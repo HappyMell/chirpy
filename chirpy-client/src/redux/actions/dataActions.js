@@ -57,50 +57,49 @@ export const postChirp = (newChirp) => (dispatch) => {
 
 //Like a chirp
 export const likeChirp = (chirpId) => (dispatch) => {
-    axios.get(`/chirp/${chirpId}/like`)
-        .then(res => {
+    axios
+        .get(`/chirp/${chirpId}/like`)
+        .then((res) => {
             dispatch({
                 type: LIKE_CHIRP,
                 payload: res.data
-            })
+            });
         })
-        .catch(err => {
-            console.log(err)
-        })
-}
+        .catch((err) => console.log(err));
+};
 
 //Unlike a chirp
 export const unlikeChirp = (chirpId) => (dispatch) => {
-    axios.get(`/chirp/${chirpId}/unlike`)
-        .then(res => {
+    axios
+        .get(`/chirp/${chirpId}/unlike`)
+        .then((res) => {
             dispatch({
                 type: UNLIKE_CHIRP,
                 payload: res.data
-            })
+            });
         })
-        .catch(err => {
-            console.log(err)
-        })
-}
+        .catch((err) => console.log(err));
+};
 
 //Submit a comment
 
 export const submitComment = (chirpId, commentData) => (dispatch) => {
-    axios.post(`/chirp/${chirpId}/comment`, commentData)
-        .then(res => {
+    axios
+        .post(`/chirp/${chirpId}/comment`, commentData)
+        .then((res) => {
             dispatch({
                 type: SUBMIT_COMMENT,
                 payload: res.data
             });
-            dispatch(clearErrors())
+            dispatch(clearErrors());
         })
-        .catch(err => {
+        .catch((err) => {
             dispatch({
                 type: SET_ERRORS,
                 payload: err.response.data
-            })
-        })
-}
+            });
+        });
+};
 
 //Delete a chirp
 export const deleteChirp = (chirpId) => (dispatch) => {

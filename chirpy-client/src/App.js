@@ -26,6 +26,7 @@ import User from './pages/user';
 
 const theme = createMuiTheme(themeFile);
 
+axios.defaults.baseURL = 'https://europe-west2-chirpy-1dcff.cloudfunctions.net/api'
 
 const token = localStorage.FBIdToken;
 

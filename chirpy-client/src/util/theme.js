@@ -55,7 +55,7 @@ export default {
         },
         closeButton: {
             position: 'absolute',
-            left: '91%',
+            left: '84%',
             top: '6%',
         },
         paper: {
@@ -120,8 +120,8 @@ export default {
         },
 
         expandButton: {
-            position: 'absolute',
-            left: '90%'
+            //   position: 'absolute',
+            // left: '90%'
         },
         spinnerDiv: {
             textAlign: 'center',
@@ -133,15 +133,7 @@ export default {
             borderBottom: '1px solid rgba(0, 0, 0, 0.1)',
             marginBottom: 20
         },
-        commentImage: {
-            maxWidth: '100%',
-            height: 100,
-            objectFit: 'cover',
-            borderRadius: '50%'
-        },
-        commentData: {
-            marginLeft: 20
-        },
+
 
     }
 
